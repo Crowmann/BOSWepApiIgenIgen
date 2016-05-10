@@ -10,6 +10,7 @@ namespace BosWebApiFinal.Models
         public BosContext()
             : base("name=BosContext")
         {
+            base.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Booking> Booking { get; set; }
