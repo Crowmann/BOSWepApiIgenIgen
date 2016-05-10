@@ -221,6 +221,10 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KalendersController.cs" />
     <Compile Include="Controllers\KursusController.cs" />
+    <Compile Include="Controllers\KursusTypesController.cs" />
+    <Compile Include="Controllers\LederesController.cs" />
+    <Compile Include="Controllers\LoginsController.cs" />
+    <Compile Include="Controllers\LokalersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
