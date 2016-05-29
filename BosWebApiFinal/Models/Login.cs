@@ -9,13 +9,12 @@ namespace BosWebApiFinal.Models
     [Table("Login")]
     public partial class Login
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [StringLength(50)]
-        public string Navn { get; set; }
+        public string BrugerNavn { get; set; }
 
         [StringLength(50)]
-        public string Password { get; set; }
+        public string KodeOrd { get; set; }
     }
 }
