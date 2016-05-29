@@ -15,16 +15,15 @@ namespace BosWebApiFinal.Models
             Kursus = new HashSet<Kursus>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [StringLength(50)]
         public string Navn { get; set; }
 
-        public int? Tlf { get; set; }
+        public int? TelefonNr { get; set; }
 
         [StringLength(50)]
-        public string Mail { get; set; }
+        public string Email { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Kursus> Kursus { get; set; }

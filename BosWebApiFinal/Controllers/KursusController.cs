@@ -44,7 +44,7 @@ namespace BosWebApiFinal.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != kursus.Id)
+            if (id != kursus.KursusId)
             {
                 return BadRequest();
             }
@@ -87,7 +87,7 @@ namespace BosWebApiFinal.Controllers
             }
             catch (DbUpdateException)
             {
-                if (KursusExists(kursus.Id))
+                if (KursusExists(kursus.KursusId))
                 {
                     return Conflict();
                 }
@@ -97,7 +97,7 @@ namespace BosWebApiFinal.Controllers
                 }
             }
 
-            return CreatedAtRoute("DefaultApi", new { id = kursus.Id }, kursus);
+            return CreatedAtRoute("DefaultApi", new { id = kursus.KursusId }, kursus);
         }
 
         // DELETE: api/Kursus/5
@@ -127,7 +127,7 @@ namespace BosWebApiFinal.Controllers
 
         private bool KursusExists(int id)
         {
-            return db.Kursus.Count(e => e.Id == id) > 0;
+            return db.Kursus.Count(e => e.KursusId == id) > 0;
         }
     }
 }
