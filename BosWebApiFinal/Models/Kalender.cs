@@ -6,18 +6,10 @@ namespace BosWebApiFinal.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Lokation")]
-    public partial class Lokation
+    [Table("Kalender")]
+    public partial class Kalender
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
-
-        [StringLength(50)]
-        public string Addresse { get; set; }
-
-        [StringLength(50)]
-        public string ByNavn { get; set; }
-
-        [StringLength(50)]
-        public string Land { get; set; }
     }
 }

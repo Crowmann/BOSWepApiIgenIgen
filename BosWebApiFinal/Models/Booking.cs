@@ -9,17 +9,21 @@ namespace BosWebApiFinal.Models
     [Table("Booking")]
     public partial class Booking
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
-        [StringLength(50)]
-        public string Name { get; set; }
+        public DateTime? Date { get; set; }
 
-        public int? Lokale { get; set; }
+        public int? Fk_Kursus { get; set; }
 
-        public int? DateTime { get; set; }
+        public int? Fk_Leder { get; set; }
 
-        public int? DeltagerAntal { get; set; }
+        public int? Fk_Lokaler { get; set; }
 
-        public int? BookingLokation { get; set; }
+        public virtual Kursus Kursus { get; set; }
+
+        public virtual Ledere Ledere { get; set; }
+
+        public virtual Lokaler Lokaler { get; set; }
     }
 }

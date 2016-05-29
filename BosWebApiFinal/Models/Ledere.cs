@@ -6,11 +6,11 @@ namespace BosWebApiFinal.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Lokaler")]
-    public partial class Lokaler
+    [Table("Ledere")]
+    public partial class Ledere
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Lokaler()
+        public Ledere()
         {
             Booking = new HashSet<Booking>();
             Kursus = new HashSet<Kursus>();
@@ -20,15 +20,15 @@ namespace BosWebApiFinal.Models
         public int Id { get; set; }
 
         [StringLength(50)]
-        public string Addresse { get; set; }
+        public string Navn { get; set; }
+
+        public int? Tlf { get; set; }
 
         [StringLength(50)]
-        public string Byy { get; set; }
+        public string Mail { get; set; }
 
-        [StringLength(50)]
-        public string Land { get; set; }
-
-        public int? Pladser { get; set; }
+        [Column("Admin id")]
+        public int? Admin_id { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Booking> Booking { get; set; }
