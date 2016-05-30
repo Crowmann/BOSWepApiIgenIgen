@@ -14,7 +14,7 @@ namespace BosWebApiFinal.Controllers
 {
     public class DeltageresController : ApiController
     {
-        private BosContext db = new BosContext();
+        private Model_Context db = new Model_Context();
 
         // GET: api/Deltageres
         public IQueryable<Deltagere> GetDeltagere()

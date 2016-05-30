@@ -14,7 +14,7 @@ namespace BosWebApiFinal.Controllers
 {
     public class KursusController : ApiController
     {
-        private BosContext db = new BosContext();
+        private Model_Context db = new Model_Context();
 
         // GET: api/Kursus
         public IQueryable<Kursus> GetKursus()
@@ -30,10 +30,8 @@ namespace BosWebApiFinal.Controllers
             if (kursus == null)
             {
                 return NotFound();
-               
             }
-            kursus.Adresse = null;
-            kursus.Deltagere = db.Deltagere.Where(d => d.Id == kursus.DeltagerListe).FirstOrDefault();
+
             return Ok(kursus);
         }
 

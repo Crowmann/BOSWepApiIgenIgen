@@ -8,7 +8,12 @@ namespace BosWebApiFinal.Models
 
     public partial class Kursus
     {
-        
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Kursus()
+        {
+            Deltagere = new HashSet<Deltagere>();
+        }
+
         public int KursusId { get; set; }
 
         [StringLength(50)]
@@ -17,9 +22,7 @@ namespace BosWebApiFinal.Models
         [StringLength(50)]
         public string Navn { get; set; }
 
-        public int? DeltagerListe { get; set; }
-
-        public Deltagere Deltagere { get; set; }
-
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Deltagere> Deltagere { get; set; }
     }
 }

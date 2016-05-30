@@ -5,10 +5,10 @@ namespace BosWebApiFinal.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class BosContext : DbContext
+    public partial class Model_Context : DbContext
     {
-        public BosContext()
-            : base("name=BosContext2")
+        public Model_Context()
+            : base("name=Model_Context")
         {
             base.Configuration.ProxyCreationEnabled = false;
         }
@@ -22,13 +22,10 @@ namespace BosWebApiFinal.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
-
             modelBuilder.Entity<Deltagere>()
                 .HasMany(e => e.Kursus)
-                .WithOptional(e => e.Deltagere)
-                .HasForeignKey(e => e.DeltagerListe);
-
+                .WithMany(e => e.Deltagere)
+                .Map(m => m.ToTable("Kursus_Deltager").MapLeftKey("Deltagere_id").MapRightKey("Kursus_id"));
 
             modelBuilder.Entity<Lokation>()
                 .HasMany(e => e.Booking)
