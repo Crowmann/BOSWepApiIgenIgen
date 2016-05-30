@@ -226,13 +226,14 @@
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Booking.cs" />
+    <Compile Include="Models\DbModelContext.cs" />
     <Compile Include="Models\Deltagere.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Kursus.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Lokaler.cs" />
     <Compile Include="Models\Lokation.cs" />
-    <Compile Include="Models\Model_Context.cs" />
+    <Compile Include="Models\View_Deltagere_Kursus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />

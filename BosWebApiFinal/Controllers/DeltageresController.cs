@@ -14,7 +14,7 @@ namespace BosWebApiFinal.Controllers
 {
     public class DeltageresController : ApiController
     {
-        private Model_Context db = new Model_Context();
+        private DbModelContext db = new DbModelContext();
 
         // GET: api/Deltageres
         public IQueryable<Deltagere> GetDeltagere()
@@ -31,7 +31,11 @@ namespace BosWebApiFinal.Controllers
             {
                 return NotFound();
             }
-            deltagere.Kursus = db.Deltagere.Find(id).Kursus.ToList();
+
+            var xd = db.View_Deltagere_Kursus.Where(d => deltagere.Id == d.Deltagere_id).ToList();
+            List<Kursus> kursuses = xd.Select(x => db.Kursus.FirstOrDefault(k => x.Kursus_id == k.KursusId)).ToList();
+
+            deltagere.Kursus = kursuses;
             return Ok(deltagere);
         }
 

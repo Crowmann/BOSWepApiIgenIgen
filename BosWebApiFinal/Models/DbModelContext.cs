@@ -5,12 +5,12 @@ namespace BosWebApiFinal.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class Model_Context : DbContext
+    public partial class DbModelContext : DbContext
     {
-        public Model_Context()
-            : base("name=Model_Context")
+        public DbModelContext()
+            : base("name=DbContext")
         {
-            base.Configuration.ProxyCreationEnabled = false;
+            Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual DbSet<Booking> Booking { get; set; }
@@ -19,6 +19,7 @@ namespace BosWebApiFinal.Models
         public virtual DbSet<Login> Login { get; set; }
         public virtual DbSet<Lokaler> Lokaler { get; set; }
         public virtual DbSet<Lokation> Lokation { get; set; }
+        public virtual DbSet<View_Deltagere_Kursus> View_Deltagere_Kursus { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

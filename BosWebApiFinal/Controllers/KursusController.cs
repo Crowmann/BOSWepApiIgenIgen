@@ -14,7 +14,7 @@ namespace BosWebApiFinal.Controllers
 {
     public class KursusController : ApiController
     {
-        private Model_Context db = new Model_Context();
+        private DbModelContext db = new DbModelContext();
 
         // GET: api/Kursus
         public IQueryable<Kursus> GetKursus()
