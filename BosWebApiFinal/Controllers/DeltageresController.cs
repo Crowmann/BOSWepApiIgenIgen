@@ -31,7 +31,7 @@ namespace BosWebApiFinal.Controllers
             {
                 return NotFound();
             }
-
+            deltagere.Kursus = db.Deltagere.Find(id).Kursus.ToList();
             return Ok(deltagere);
         }
 
