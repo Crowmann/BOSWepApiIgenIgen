@@ -32,6 +32,7 @@ namespace BosWebApiFinal.Controllers
                 return NotFound();
                
             }
+            kursus.Adresse = null;
             kursus.Deltagere = db.Deltagere.Where(d => d.Id == kursus.DeltagerListe).FirstOrDefault();
             return Ok(kursus);
         }

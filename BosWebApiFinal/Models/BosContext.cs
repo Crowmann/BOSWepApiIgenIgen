@@ -22,20 +22,13 @@ namespace BosWebApiFinal.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Deltagere>()
-                .HasMany(e => e.Kursus_Deltager)
-                .WithOptional(e => e.Deltagere)
-                .HasForeignKey(e => e.Deltagere_id);
+
 
             modelBuilder.Entity<Deltagere>()
                 .HasMany(e => e.Kursus)
                 .WithOptional(e => e.Deltagere)
                 .HasForeignKey(e => e.DeltagerListe);
 
-            modelBuilder.Entity<Kursus>()
-                .HasMany(e => e.Kursus_Deltager)
-                .WithOptional(e => e.Kursus)
-                .HasForeignKey(e => e.Kursus_id);
 
             modelBuilder.Entity<Lokation>()
                 .HasMany(e => e.Booking)
