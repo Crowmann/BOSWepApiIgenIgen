@@ -16,7 +16,6 @@ namespace BosWebApiFinal.Models
         public virtual DbSet<Booking> Booking { get; set; }
         public virtual DbSet<Deltagere> Deltagere { get; set; }
         public virtual DbSet<Kursus> Kursus { get; set; }
-        public virtual DbSet<Kursus_Deltager> Kursus_Deltager { get; set; }
         public virtual DbSet<Login> Login { get; set; }
         public virtual DbSet<Lokaler> Lokaler { get; set; }
         public virtual DbSet<Lokation> Lokation { get; set; }
