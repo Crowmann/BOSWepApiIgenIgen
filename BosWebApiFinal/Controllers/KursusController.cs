@@ -31,7 +31,9 @@ namespace BosWebApiFinal.Controllers
             {
                 return NotFound();
             }
-
+            var xd = db.View_Deltagere_Kursus.Where(d => kursus.KursusId == d.Kursus_id).ToList();
+            List<Deltagere> deltagere = xd.Select(x => db.Deltagere.FirstOrDefault(k => x.Deltagere_id == k.Id)).ToList();
+            kursus.Deltagere = deltagere;
             return Ok(kursus);
         }
 
