@@ -16,10 +16,12 @@ namespace BosWebApiFinal.Models
 
         public int? Lokale { get; set; }
 
-        public DateTime Datetime { get; set; }
+        public DateTime? DateTime { get; set; }
 
         public int? DeltagerAntal { get; set; }
 
         public int? BookingLokation { get; set; }
+
+        public virtual Lokation Lokation { get; set; }
     }
 }

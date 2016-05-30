@@ -80,22 +80,7 @@ namespace BosWebApiFinal.Controllers
             }
 
             db.Login.Add(login);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (LoginExists(login.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = login.Id }, login);
         }

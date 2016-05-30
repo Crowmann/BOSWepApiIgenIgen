@@ -220,6 +220,7 @@
     <Compile Include="Controllers\DeltageresController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KursusController.cs" />
+    <Compile Include="Controllers\Kursus_DeltagerController.cs" />
     <Compile Include="Controllers\LoginsController.cs" />
     <Compile Include="Controllers\LokalersController.cs" />
     <Compile Include="Controllers\LokationsController.cs" />
@@ -234,7 +235,8 @@
     <Compile Include="Models\Deltagere.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Kursus.cs" />
-    <Compile Include="Models\KursusType.cs" />
+    <Compile Include="Models\Kursus_Deltager.cs" />
+    <Compile Include="Models\Kursus_DeltagerDTO.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Lokaler.cs" />
     <Compile Include="Models\Lokation.cs" />

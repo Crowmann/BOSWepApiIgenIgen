@@ -6,12 +6,16 @@ namespace BosWebApiFinal.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("KursusType")]
-    public partial class KursusType
+    public partial class Kursus_Deltager
     {
         public int Id { get; set; }
 
-        [StringLength(50)]
-        public string Type { get; set; }
+        public int? Kursus_id { get; set; }
+
+        public int? Deltagere_id { get; set; }
+
+        public virtual Deltagere Deltagere { get; set; }
+
+        public virtual Kursus Kursus { get; set; }
     }
 }

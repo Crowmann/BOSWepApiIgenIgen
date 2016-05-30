@@ -12,44 +12,44 @@ using BosWebApiFinal.Models;
 
 namespace BosWebApiFinal.Controllers
 {
-    public class DeltageresController : ApiController
+    public class Kursus_DeltagerController : ApiController
     {
         private BosContext db = new BosContext();
 
-        // GET: api/Deltageres
-        public IQueryable<Deltagere> GetDeltagere()
+        // GET: api/Kursus_Deltager
+        public IQueryable<Kursus_Deltager> GetKursus_Deltager()
         {
-            return db.Deltagere;
+            return db.Kursus_Deltager;
         }
 
-        // GET: api/Deltageres/5
-        [ResponseType(typeof(Deltagere))]
-        public IHttpActionResult GetDeltagere(int id)
+        // GET: api/Kursus_Deltager/5
+        [ResponseType(typeof(Kursus_Deltager))]
+        public IHttpActionResult GetKursus_Deltager(int id)
         {
-            Deltagere deltagere = db.Deltagere.Find(id);
-            if (deltagere == null)
+            Kursus_Deltager kursus_Deltager = db.Kursus_Deltager.Find(id);
+            if (kursus_Deltager == null)
             {
                 return NotFound();
             }
 
-            return Ok(deltagere);
+            return Ok(kursus_Deltager);
         }
 
-        // PUT: api/Deltageres/5
+        // PUT: api/Kursus_Deltager/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutDeltagere(int id, Deltagere deltagere)
+        public IHttpActionResult PutKursus_Deltager(int id, Kursus_Deltager kursus_Deltager)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != deltagere.Id)
+            if (id != kursus_Deltager.Id)
             {
                 return BadRequest();
             }
 
-            db.Entry(deltagere).State = EntityState.Modified;
+            db.Entry(kursus_Deltager).State = EntityState.Modified;
 
             try
             {
@@ -57,7 +57,7 @@ namespace BosWebApiFinal.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!DeltagereExists(id))
+                if (!Kursus_DeltagerExists(id))
                 {
                     return NotFound();
                 }
@@ -70,35 +70,35 @@ namespace BosWebApiFinal.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Deltageres
-        [ResponseType(typeof(Deltagere))]
-        public IHttpActionResult PostDeltagere(Deltagere deltagere)
+        // POST: api/Kursus_Deltager
+        [ResponseType(typeof(Kursus_Deltager))]
+        public IHttpActionResult PostKursus_Deltager(Kursus_Deltager kursus_Deltager)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Deltagere.Add(deltagere);
+            db.Kursus_Deltager.Add(kursus_Deltager);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = deltagere.Id }, deltagere);
+            return CreatedAtRoute("DefaultApi", new { id = kursus_Deltager.Id }, kursus_Deltager);
         }
 
-        // DELETE: api/Deltageres/5
-        [ResponseType(typeof(Deltagere))]
-        public IHttpActionResult DeleteDeltagere(int id)
+        // DELETE: api/Kursus_Deltager/5
+        [ResponseType(typeof(Kursus_Deltager))]
+        public IHttpActionResult DeleteKursus_Deltager(int id)
         {
-            Deltagere deltagere = db.Deltagere.Find(id);
-            if (deltagere == null)
+            Kursus_Deltager kursus_Deltager = db.Kursus_Deltager.Find(id);
+            if (kursus_Deltager == null)
             {
                 return NotFound();
             }
 
-            db.Deltagere.Remove(deltagere);
+            db.Kursus_Deltager.Remove(kursus_Deltager);
             db.SaveChanges();
 
-            return Ok(deltagere);
+            return Ok(kursus_Deltager);
         }
 
         protected override void Dispose(bool disposing)
@@ -110,9 +110,9 @@ namespace BosWebApiFinal.Controllers
             base.Dispose(disposing);
         }
 
-        private bool DeltagereExists(int id)
+        private bool Kursus_DeltagerExists(int id)
         {
-            return db.Deltagere.Count(e => e.Id == id) > 0;
+            return db.Kursus_Deltager.Count(e => e.Id == id) > 0;
         }
     }
 }

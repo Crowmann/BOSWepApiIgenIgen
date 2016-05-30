@@ -12,6 +12,7 @@ namespace BosWebApiFinal.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Deltagere()
         {
+            Kursus_Deltager = new HashSet<Kursus_Deltager>();
             Kursus = new HashSet<Kursus>();
         }
 
@@ -24,6 +25,9 @@ namespace BosWebApiFinal.Models
 
         [StringLength(50)]
         public string Email { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Kursus_Deltager> Kursus_Deltager { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Kursus> Kursus { get; set; }

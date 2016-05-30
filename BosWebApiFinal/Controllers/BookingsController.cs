@@ -80,22 +80,7 @@ namespace BosWebApiFinal.Controllers
             }
 
             db.Booking.Add(booking);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (BookingExists(booking.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = booking.Id }, booking);
         }

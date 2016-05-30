@@ -80,22 +80,7 @@ namespace BosWebApiFinal.Controllers
             }
 
             db.Kursus.Add(kursus);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (KursusExists(kursus.KursusId))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = kursus.KursusId }, kursus);
         }

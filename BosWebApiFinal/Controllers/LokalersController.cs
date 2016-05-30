@@ -80,22 +80,7 @@ namespace BosWebApiFinal.Controllers
             }
 
             db.Lokaler.Add(lokaler);
-
-            try
-            {
-                db.SaveChanges();
-            }
-            catch (DbUpdateException)
-            {
-                if (LokalerExists(lokaler.Id))
-                {
-                    return Conflict();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = lokaler.Id }, lokaler);
         }
