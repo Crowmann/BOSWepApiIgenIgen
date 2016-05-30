@@ -19,7 +19,7 @@ namespace BosWebApiFinal.Models
 
         public int? DeltagerListe { get; set; }
 
-        public virtual Deltagere Deltagere { get; set; }
+        public Deltagere Deltagere { get; set; }
 
     }
 }
