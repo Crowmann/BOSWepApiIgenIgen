@@ -16,7 +16,7 @@ namespace BosWebApiFinal.Models
 
         public int? Lokale { get; set; }
 
-        public int? DateTime { get; set; }
+        public DateTime Datetime { get; set; }
 
         public int? DeltagerAntal { get; set; }
 
